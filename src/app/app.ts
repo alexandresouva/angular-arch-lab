@@ -1,12 +1,14 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Layout } from '@core/layout/layout';
 
 @Component({
   selector: 'arch-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  imports: [RouterOutlet, Layout],
+  template: `
+    <arch-layout>
+      <router-outlet></router-outlet>
+    </arch-layout>
+  `
 })
-export class App {
-  protected readonly title = signal('angular-arch-lab');
-}
+export class App {}
