@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: eslint.configs.recommended,
-  allConfig: eslint.configs.all,
+  allConfig: eslint.configs.all
 });
 
 export default defineConfig([
@@ -19,11 +19,11 @@ export default defineConfig([
   {
     extends: compat.extends('plugin:prettier/recommended'),
     plugins: {
-      prettier,
+      prettier
     },
     rules: {
-      'prettier/prettier': 'error',
-    },
+      'prettier/prettier': 'error'
+    }
   },
   {
     files: ['**/*.ts'],
@@ -33,13 +33,13 @@ export default defineConfig([
       'plugin:@typescript-eslint/recommended-requiring-type-checking',
       'plugin:@angular-eslint/recommended',
       'plugin:@angular-eslint/template/process-inline-templates',
-      'plugin:prettier/recommended',
+      'plugin:prettier/recommended'
     ),
     languageOptions: {
       parserOptions: {
         project: ['tsconfig.json', 'tsconfig.app.json', 'tsconfig.spec.json'],
-        createDefaultProgram: true,
-      },
+        createDefaultProgram: true
+      }
     },
     processor: angular.processInlineTemplates,
     rules: {
@@ -48,22 +48,16 @@ export default defineConfig([
         {
           type: 'attribute',
           prefix: 'arch',
-          style: 'camelCase',
-        },
+          style: 'camelCase'
+        }
       ],
       '@angular-eslint/component-selector': [
         'error',
         {
           type: 'element',
           prefix: 'arch',
-          style: 'kebab-case',
-        },
-      ],
-      '@angular-eslint/component-class-suffix': [
-        'error',
-        {
-          suffixes: ['Component', 'Container'],
-        },
+          style: 'kebab-case'
+        }
       ],
       'no-console': 'error',
       'no-duplicate-imports': 'error',
@@ -79,45 +73,45 @@ export default defineConfig([
           format: ['PascalCase'],
           custom: {
             regex: '^[iI][A-Z]',
-            match: false,
-          },
+            match: false
+          }
         },
         {
           selector: 'typeAlias',
           format: ['PascalCase'],
           custom: {
             regex: '^[iI][A-Z]',
-            match: false,
-          },
+            match: false
+          }
         },
         {
           selector: 'enum',
-          format: ['PascalCase'],
+          format: ['PascalCase']
         },
         {
           selector: 'enumMember',
-          format: ['UPPER_CASE'],
-        },
-      ],
-    },
+          format: ['UPPER_CASE']
+        }
+      ]
+    }
   },
   {
     files: ['**/*.html'],
     extends: compat.extends(
       'plugin:@angular-eslint/template/recommended',
       'plugin:@angular-eslint/template/accessibility',
-      'plugin:prettier/recommended',
+      'plugin:prettier/recommended'
     ),
     rules: {
       '@angular-eslint/template/button-has-type': 'error',
-      '@angular-eslint/template/no-positive-tabindex': 'error',
-    },
+      '@angular-eslint/template/no-positive-tabindex': 'error'
+    }
   },
   {
     files: ['**/*.spec.ts'],
     rules: {
       '@typescript-eslint/unbound-method': 'off',
-      '@typescript-eslint/explicit-function-return-type': 'off',
-    },
-  },
+      '@typescript-eslint/explicit-function-return-type': 'off'
+    }
+  }
 ]);
