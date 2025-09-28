@@ -7,4 +7,4 @@ export type LanguageDefinition = {
 
 export type LanguageCode = (typeof AVAILABLE_LANGUAGES)[number]['id'];
 
-export type TranslationObject<T = unknown> = Record<string, T>;
+export type TranslationObject = Record<string, unknown>;

@@ -1,0 +1,11 @@
+{
+  "hello": "Olá",
+  "auth": {
+    "login": "Entrar",
+    "logout": "Sair"
+  },
+  "status": {
+    "success": "Sucesso",
+    "error": "Erro"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "hello": "Hello",
+  "auth": {
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "status": {
+    "success": "Success",
+    "error": "Error"
+  }
+}

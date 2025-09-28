@@ -29,7 +29,7 @@ export class I18nService {
     return translateSignal(key);
   }
 
-  translateSignalObject(key: string): Signal<TranslationObject> {
+  translateSignalObject(key: string): Signal<TranslationObject | string> {
     return translateObjectSignal(key);
   }
 
@@ -42,11 +42,10 @@ export class I18nService {
   }
 
   getAvailableLangs(): string[] | LanguageDefinition[] {
-    const availableLangs = this.translocoService.getAvailableLangs();
-    return availableLangs;
+    return this.translocoService.getAvailableLangs();
   }
 
-  loadLang(lang: string): Observable<TranslationObject> {
+  loadLang(lang: string): Observable<TranslationObject | undefined> {
     return this.translocoService.load(lang);
   }
 

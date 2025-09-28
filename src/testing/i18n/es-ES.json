@@ -1,0 +1,10 @@
+{
+  "hello": "Hola",
+  "auth": {
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión"
+  },
+  "status": {
+    "success": "Éxito"
+  }
+}
