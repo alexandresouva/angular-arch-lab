@@ -5,6 +5,7 @@ import {
   TranslocoService
 } from '@jsverse/transloco';
 import {
+  LanguageCode,
   LanguageDefinition,
   TranslationObject
 } from '../models/language.model';
@@ -37,7 +38,7 @@ export class I18nService {
     return this.translocoService.getActiveLang();
   }
 
-  setActiveLang(lang: string): void {
+  setActiveLang(lang: LanguageCode): void {
     this.translocoService.setActiveLang(lang);
   }
 
@@ -47,6 +48,10 @@ export class I18nService {
 
   loadLang(lang: string): Observable<TranslationObject | undefined> {
     return this.translocoService.load(lang);
+  }
+
+  onLangChange$(): Observable<string> {
+    return this.translocoService.langChanges$;
   }
 
   private setHtmlLangAttribute(lang: string): void {
