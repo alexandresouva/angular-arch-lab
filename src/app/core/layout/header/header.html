@@ -1,0 +1,46 @@
+<header>
+  <p-menubar>
+    <ng-template #start>
+      <img
+        src="bicycle-svgrepo-com.svg"
+        alt="Arch Lab logo"
+        class="w-8 cursor-pointer"
+        routerLink="/"
+      />
+    </ng-template>
+
+    <ng-template #end>
+      <div class="flex items-center gap-2">
+        <div class="card flex justify-center">
+          <p-select
+            [options]="languages"
+            [placeholder]="'layout.language' | i18n"
+            class="w-full md:w-30"
+            [(ngModel)]="selectedCountry"
+            (onChange)="changeLanguage($event.value)"
+          >
+            <ng-template #selectedItem let-selectedOption>
+              @if (selectedOption) {
+                <div class="flex items-center gap-2">
+                  <span [class]="selectedOption.flag"></span>
+                  <div>{{ selectedOption.name }}</div>
+                </div>
+              }
+            </ng-template>
+            <ng-template let-language #item>
+              <div class="flex items-center gap-2">
+                <span [class]="language.flag"></span>
+                <div>{{ language.name }}</div>
+              </div>
+            </ng-template>
+          </p-select>
+        </div>
+
+        <p-avatar
+          image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+          shape="circle"
+        />
+      </div>
+    </ng-template>
+  </p-menubar>
+</header>
